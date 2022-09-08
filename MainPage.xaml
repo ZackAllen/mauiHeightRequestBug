@@ -13,10 +13,8 @@
                    HorizontalOptions="Center"
                    SemanticProperties.HeadingLevel="Level1"
                    Text="Working image:" />
-
-            <Image HeightRequest="{OnIdiom Desktop=-1,
-                                           Phone=200}"
-                   HorizontalOptions="Center"
+            <!--  No height request, image stretches to fit  -->
+            <Image HorizontalOptions="Center"
                    SemanticProperties.Description="Working image"
                    Source="dotnet_bot.png" />
 
@@ -24,7 +22,7 @@
                    HorizontalOptions="Center"
                    SemanticProperties.HeadingLevel="Level1"
                    Text="Image with bug:" />
-
+            <!--  With no default set, platforms that aren't Phone have this value set to 0, making the visual element disappear instead of stretching to fit the parent like it should  -->
             <Image HeightRequest="{OnIdiom Phone=200}"
                    HorizontalOptions="Center"
                    SemanticProperties.Description="Defaults to height request 0 on desktop"
